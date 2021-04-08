@@ -14,4 +14,8 @@
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
+
+    <bean class="spring.dao.StudentDaoImpl" id="studentDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
 </beans>
