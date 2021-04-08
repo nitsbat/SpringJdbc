@@ -14,7 +14,7 @@ public class Application {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfiguration.class);
-        StudentDAO studentDAO = context.getBean("studentDao", StudentDaoImpl.class);
+        StudentDAO studentDAO = context.getBean("studentDaoImpl", StudentDaoImpl.class);
 
         Student student = studentDAO.getStudent(113);
         System.out.println("Single Record - " + student);
