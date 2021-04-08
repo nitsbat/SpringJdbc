@@ -14,9 +14,9 @@ public class Application {
         StudentDAO studentDAO = context.getBean("studentDao", StudentDaoImpl.class);
 
 
-        Student student = new Student(44, "dash", "bangalore");
+//        Student student = new Student(44, "dash", "bangalore");
 
-        int status = studentDAO.change(33, student);
-        System.out.println("Updated record " + status + " row updated");
+        int status = studentDAO.delete(33);
+        System.out.println("Deleted record\n" + status + " row updated");
     }
 }
