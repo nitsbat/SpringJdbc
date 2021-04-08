@@ -14,7 +14,7 @@ public class Application {
 
         String query = "insert into student values(?,?,?)";
 
-        int update = jdbcTemplate.update(query, 116, "Pragya", "Goa");
+        int update = jdbcTemplate.update(query, 117, "Rishi", "Hyderabad");
         System.out.println("Inserted record " + update + " row added");
     }
 }
