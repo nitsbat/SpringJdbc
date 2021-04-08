@@ -13,9 +13,10 @@ public class Application {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         StudentDAO studentDAO = context.getBean("studentDao", StudentDaoImpl.class);
 
-        Student student = new Student(33, "Nits", "Pune");
 
-        int status = studentDAO.insert(student);
-        System.out.println("Inserted record " + status + " row added");
+        Student student = new Student(44, "dash", "bangalore");
+
+        int status = studentDAO.change(33, student);
+        System.out.println("Updated record " + status + " row updated");
     }
 }
