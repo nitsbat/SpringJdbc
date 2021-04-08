@@ -11,5 +11,10 @@ public class Application {
         JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
 
         System.out.println("Successful");
+
+        String query = "insert into student values(?,?,?)";
+
+        int update = jdbcTemplate.update(query, 116, "Pragya", "Goa");
+        System.out.println("Inserted record " + update + " row added");
     }
 }
