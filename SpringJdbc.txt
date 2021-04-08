@@ -1,0 +1,36 @@
+Spring JDBC - connect to database and execute SQL queries.
+			  we use Spring JDBC module (JDBC template). Internally it uses our JDBC but is a wrapper and provides new and some more features.
+			  
+
+Why Spring JDBC ? 
+
+The traditional JDBC is an API to connect and perform operations with database.
+Disadvantages :
+1) We need to write a lot of code. (Everytime we make a connection, we need to take out statement and then execute query and then 
+									connection close.)
+
+2) Exception Handling problem - whenever SQLException or checked exception is there, we always use try and catch or throw it.
+							    so there will be so many try catch for lot of code.
+								
+3) Repeating all these codes from one to another database logic is time consuming.
+4) Limited Java Feature set.
+5) Not suitable for large-scale applications as code is repeated.
+6) Cannot insert or update multiple tables with sequence.
+
+**************************************************************************************************
+
+Spring JDBC provides class JDBC template which has all the important method to perform operation with database.
+
+But the JDBC template needs a data source which is an Interface and contains all the information about the database like url, port ,
+driver class,etc. The implementation of DataSource interface is in the DriverManagerDataSource.
+This DriverManagerDataSource uses the four properties 
+Driver className - every database has its own driver class which registers and configure to the database(mySQL,oracle,etc.)
+url - 
+username -
+password - 
+
+JDBC template class has methods for all the CRUD operations like insert,update,delete but select queries can't be fire by this.
+for that we have to use the execute() method.
+
+*******************************************************************************************************
+
