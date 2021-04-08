@@ -42,14 +42,12 @@ public class StudentDaoImpl implements StudentDAO {
     @Override
     public Student getStudent(int studentId) {
         String query = "select * from student where id=?";
-        Student student = jdbcTemplate.queryForObject(query, new RowMapperImpl(), studentId);
-        return student;
+        return jdbcTemplate.queryForObject(query, new RowMapperImpl(), studentId);
     }
 
     @Override
     public List<Student> getStudents() {
         String query = "select * from student where city=?";
-        List<Student> studentList = jdbcTemplate.query(query, new RowMapperImpl(), "Delhi");
-        return studentList;
+        return jdbcTemplate.query(query, new RowMapperImpl(), "Delhi");
     }
 }
