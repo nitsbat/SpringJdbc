@@ -34,3 +34,9 @@ for that we have to use the execute() method.
 
 *******************************************************************************************************
 
+For CRUD operations we can use the update(String query, Object args..) method of JDBC template.
+For select queries we have to use the query(String query,RowMapper<T> rowMapper, Object args..) method or
+queryForObject(String query,RowMapper<T> rowMapper, Object args..) of JDBC template.
+query() is used to retrieve the list of objects and queryForObject() gives a single selected row.
+
+Row mapper is basically an interface which converts a simple resultSet into a row and then into a object.

@@ -7,16 +7,20 @@ import spring.dao.StudentDAO;
 import spring.dao.StudentDaoImpl;
 import spring.model.Student;
 
+import java.util.List;
+
 public class Application {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         StudentDAO studentDAO = context.getBean("studentDao", StudentDaoImpl.class);
 
+        Student student = studentDAO.getStudent(113);
+        System.out.println("Single Record - " + student);
 
-//        Student student = new Student(44, "dash", "bangalore");
+        List<Student> studentList = studentDAO.getStudents();
+        System.out.println("\nList of person belong to city delhi");
+        studentList.forEach(System.out::println);
 
-        int status = studentDAO.delete(33);
-        System.out.println("Deleted record\n" + status + " row updated");
     }
 }

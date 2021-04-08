@@ -6,7 +6,7 @@ public class Student {
     private String name;
     private String city;
 
-    Student() {
+    public Student() {
     }
 
     public Student(int id, String name, String city) {

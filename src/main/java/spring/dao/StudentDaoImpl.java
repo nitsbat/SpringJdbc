@@ -1,7 +1,10 @@
 package spring.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import spring.model.Student;
+
+import java.util.List;
 
 public class StudentDaoImpl implements StudentDAO {
 
@@ -34,5 +37,19 @@ public class StudentDaoImpl implements StudentDAO {
         String query = "delete from student where id =?";
         return jdbcTemplate
                 .update(query, key);
+    }
+
+    @Override
+    public Student getStudent(int studentId) {
+        String query = "select * from student where id=?";
+        Student student = jdbcTemplate.queryForObject(query, new RowMapperImpl(), studentId);
+        return student;
+    }
+
+    @Override
+    public List<Student> getStudents() {
+        String query = "select * from student where city=?";
+        List<Student> studentList = jdbcTemplate.query(query, new RowMapperImpl(), "Delhi");
+        return studentList;
     }
 }
